@@ -12,6 +12,7 @@ if (isGithubActions) {
   basePath = `/${repo}`;
 }
 const nextConfig = {
+  output: "export",
   assetPrefix: assetPrefix,
   basePath: basePath,
 };

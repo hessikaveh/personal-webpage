@@ -1,9 +1,10 @@
-name: Node.js CI
+name: Build and Deploy
 
 on:
   push:
     branches: [main]
-
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest

@@ -20,7 +20,7 @@ export default function Page() {
         <p>dome</p>
         <Image
           className="items-center"
-          src="https://raw.githubusercontent.com/hessikaveh/personal-webpage/main/public//dome.svg"
+          src="https://raw.githubusercontent.com/hessikaveh/personal-webpage/main/public/dome.svg"
           alt="starry night dome"
           width={300}
           height={200}

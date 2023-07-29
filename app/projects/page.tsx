@@ -10,7 +10,7 @@ export default function Page() {
         <p>Higgs</p>
         <div>
           <Image
-            src="/higgs_frame.svg"
+            src="https://raw.githubusercontent.com/hessikaveh/personal-webpage/main/public/higgs_frame.svg"
             alt="higgs analysis overview"
             width={900}
             height={450}

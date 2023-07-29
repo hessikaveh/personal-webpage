@@ -1,6 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Link from "next/link";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,18 +21,23 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="navbar bg-base-100">
           <div className="navbar-start">
-            <a className="btn btn-ghost btn-circle" href="/">
-              <img src="/favicon.ico" alt="Sam Kaveh" />
-            </a>
+            <Link className="btn btn-ghost btn-circle" href="/">
+              <Image
+                src="/favicon.ico"
+                width={256}
+                height={256}
+                alt="Sam Kaveh"
+              />
+            </Link>
           </div>
           <div className="navbar-center">
             <div className="btn-group">
-              <a className="btn btn-neutral btn-sm" href="/">
+              <Link className="btn btn-neutral btn-sm" href="/">
                 About Me
-              </a>
-              <a className="btn btn-neutral btn-sm" href="/projects/">
+              </Link>
+              <Link className="btn btn-neutral btn-sm" href="/projects/">
                 Projects
-              </a>
+              </Link>
             </div>
           </div>
           <div className="navbar-end"></div>

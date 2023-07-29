@@ -13,7 +13,9 @@ if (isGithubActions) {
 }
 const nextConfig = {
   output: "export",
-  images: { unoptimized: true },
+  images: {
+    unoptimized: true,
+  },
   assetPrefix: assetPrefix,
   basePath: basePath,
 };

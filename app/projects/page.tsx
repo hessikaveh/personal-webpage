@@ -6,6 +6,12 @@ export default function Page() {
       <article className="prose lg:prose-xl prose-img:mx-auto">
         <h1>Sustainable supply chains</h1>
         <p>kdfdj.</p>
+        <Image
+          src="https://raw.githubusercontent.com/hessikaveh/personal-webpage/main/public/supplychain.png"
+          alt="supply chain"
+          width={900}
+          height={450}
+        ></Image>
         <h1>Hunting for Higgs</h1>
         <p>Higgs</p>
         <div>

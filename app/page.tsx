@@ -8,7 +8,7 @@ export default function Home() {
         <h2>About Me</h2>
         <p>
           {" "}
-          During my career I put on many hats, from founding a startup and
+          During my career I have put on many hats, from founding a startup and
           software development to consulting companies to migrate their
           infrastructure to cloud and incorporating machine learning
           technologies in their daily processes.{" "}

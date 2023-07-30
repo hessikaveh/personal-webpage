@@ -9,7 +9,7 @@ export default function Home() {
         <p>
           {" "}
           During my career I have put on many hats, from founding a startup and
-          software development to consulting companies to migrate their
+          software development to consulting companies in migrating their
           infrastructure to cloud and incorporating machine learning
           technologies in their daily processes.{" "}
         </p>
@@ -19,7 +19,7 @@ export default function Home() {
         </p>
       </article>
       <div>
-        <ul className="menu menu-horizontal bg-base-200 rounded-box">
+        <ul className="menu menu-horizontal bg-base-200 rounded-box my-3">
           <li>
             <Link className="" href="https://www.linkedin.com/in/sam-kaveh/">
               <svg

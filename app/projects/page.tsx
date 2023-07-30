@@ -7,7 +7,7 @@ export default function Page() {
         <h1>Sustainable supply chains</h1>
         <p>kdfdj.</p>
         <Image
-          src="https://raw.githubusercontent.com/hessikaveh/personal-webpage/main/public/supplychain.png"
+          src="https://raw.githubusercontent.com/hessikaveh/personal-webpage/main/public/supplychain01.png"
           alt="supply chain"
           width={900}
           height={450}

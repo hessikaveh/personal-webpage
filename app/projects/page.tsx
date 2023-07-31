@@ -38,7 +38,12 @@ export default function Page() {
           ></Image>
         </div>
         <h1>Building virtual skies</h1>
-        <p>dome</p>
+        <p>
+          As an entrepreneur I founded a company that specialized in creating
+          full dome projection experiments. The devices and software I helped
+          write and design are used in small and large planetarium projection
+          systems created by the founded company.
+        </p>
         <Image
           className="items-center"
           src="https://raw.githubusercontent.com/hessikaveh/personal-webpage/main/public/dome.svg"

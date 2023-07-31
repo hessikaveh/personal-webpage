@@ -11,8 +11,8 @@ export default function Page() {
           intelligent pricing solutions. Incorporating the solutions that use
           modern technologies such as cloud infrastructure and machine learning
           help companies save costs and compete within a world with many
-          uncertainty factors to manage and help reduce wastage and bad practice
-          that hurts our environment and lives.
+          uncertainty factors to manage. It also help us reduce wastage and bad
+          practice that hurts our environment and lives.
         </p>
         <Image
           src="https://raw.githubusercontent.com/hessikaveh/personal-webpage/main/public/supplychain01.png"

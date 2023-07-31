@@ -11,8 +11,8 @@ export default function Page() {
           intelligent pricing solutions. Incorporating the solutions that use
           modern technologies such as cloud infrastructure and machine learning
           help companies save costs and compete within a world with many
-          uncertainty factors to manage. It also help us reduce wastage and bad
-          practice that hurts our environment and lives.
+          uncertainty factors to manage. It also helps us reduce waste and bad
+          business practices that hurts our environment and lives.
         </p>
         <Image
           src="https://raw.githubusercontent.com/hessikaveh/personal-webpage/main/public/supplychain01.png"
@@ -21,7 +21,14 @@ export default function Page() {
           height={450}
         ></Image>
         <h1>Hunting for Higgs</h1>
-        <p>Higgs</p>
+        <p>
+          During my time as a physicist I contributed to the search and
+          observation of the Higgs particle. This mysterious particle of nature
+          helps us understand why atoms and their subparts have mass and will be
+          a gateway to new technologies as we learn more about it. To study this
+          particle I learned a lot about experiment design, complex data in
+          large volumes and how to analyse them using deep learning methods.
+        </p>
         <div>
           <Image
             src="https://raw.githubusercontent.com/hessikaveh/personal-webpage/main/public/higgs_frame.svg"

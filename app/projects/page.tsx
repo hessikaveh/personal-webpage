@@ -5,7 +5,15 @@ export default function Page() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <article className="prose lg:prose-xl prose-img:mx-auto">
         <h1>Sustainable supply chains</h1>
-        <p>kdfdj.</p>
+        <p>
+          At my current position with Blue Yonder I support retailers and
+          grocers from the replenishment and demand forcasting side up to
+          intelligent pricing solutions. Incorporating the solutions that use
+          modern technologies such as cloud infrastructure and machine learning
+          help companies save costs and compete within a world with many
+          uncertainty factors to manage and help reduce wastage and bad practice
+          that hurts our environment and lives.
+        </p>
         <Image
           src="https://raw.githubusercontent.com/hessikaveh/personal-webpage/main/public/supplychain01.png"
           alt="supply chain"

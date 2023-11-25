@@ -39,6 +39,9 @@ export default function RootLayout({
               <Link className="btn btn-neutral btn-sm" href="/projects/">
                 Projects
               </Link>
+              <Link className="btn btn-neutral btn-sm" href="/articles/">
+                Articles
+              </Link>
             </div>
           </div>
           <div className="navbar-end"></div>

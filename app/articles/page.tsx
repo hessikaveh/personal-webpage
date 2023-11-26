@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   DndContext,
   DragEndEvent,
@@ -11,6 +11,11 @@ import {
 
 import { Droppable, Draggable, DraggableOverlay } from "../components";
 import dynamic from "next/dynamic";
+import hljs from "highlight.js/lib/core";
+import python from "highlight.js/lib/languages/python";
+import "highlight.js/styles/github.css";
+
+hljs.registerLanguage("python", python);
 
 const DraggableOverlaytWithNoSSR = dynamic(
   () => Promise.resolve(DraggableOverlay),
@@ -25,6 +30,9 @@ export default function Page() {
   const [parent, setParent] = useState<UniqueIdentifier | null>(null);
   const [highlight, setHighlight] = useState<string>(colors[1]);
   const draggableMarkup = <DraggableItem label="label" />;
+  useEffect(() => {
+    hljs.highlightAll();
+  });
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -34,10 +42,11 @@ export default function Page() {
           Here are some insights into topics about the async programming in
           python
         </p>
-        <div className="mockup-code bg-slate-400">
-          <code>import</code>
-        </div>
+        <pre className="mockup-code">
+          <code className="language-python">import numpy as np</code>
+        </pre>
       </article>
+
       <DndContext
         onDragStart={() => {
           setIsDragging(true);
@@ -45,7 +54,7 @@ export default function Page() {
         onDragEnd={handleDragEnd}
       >
         <div
-          className="card w-96 bg-base-100 shadow-xl"
+          className="card w-96 bg-base-100 shadow-xl m-4"
           style={{ backgroundColor: highlight }}
         >
           <div className="card-body">

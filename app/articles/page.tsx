@@ -7,15 +7,19 @@ import {
   useDraggable,
   Modifiers,
   DragOverEvent,
+  DragStartEvent,
 } from "@dnd-kit/core";
 
 import { Droppable, Draggable, DraggableOverlay } from "../components";
 import dynamic from "next/dynamic";
 import hljs from "highlight.js/lib/core";
 import python from "highlight.js/lib/languages/python";
+import bash from "highlight.js/lib/languages/bash";
+
 import "highlight.js/styles/github.css";
 
 hljs.registerLanguage("python", python);
+hljs.registerLanguage("bash", bash);
 
 const DraggableOverlaytWithNoSSR = dynamic(
   () => Promise.resolve(DraggableOverlay),
@@ -28,8 +32,12 @@ export default function Page() {
   const colors = ["lightgreen", "lightblue"];
   const [isDragging, setIsDragging] = useState(false);
   const [parent, setParent] = useState<UniqueIdentifier | null>(null);
+  const [parentB, setParentB] = useState<UniqueIdentifier | null>(null);
+  const [parentC, setParentC] = useState<UniqueIdentifier | null>(null);
   const [highlight, setHighlight] = useState<string>(colors[1]);
-  const draggableMarkup = <DraggableItem label="label" />;
+  const draggableMarkupA = <DraggableItem label="Task A" id_outer={"tA"} />;
+  const draggableMarkupB = <DraggableItem label="Task B" id_outer={"tB"} />;
+  const draggableMarkupC = <DraggableItem label="Task C" id_outer={"tC"} />;
 
   useEffect(() => {
     hljs.highlightAll();
@@ -90,9 +98,7 @@ export default function Page() {
         </pre>
 
         <DndContext
-          onDragStart={() => {
-            setIsDragging(true);
-          }}
+          onDragStart={() => setIsDragging(true)}
           onDragEnd={handleDragEnd}
         >
           <div className="flex flex-col w-full m-1">
@@ -105,8 +111,11 @@ export default function Page() {
                   {" "}
                   Here are the items you can drag:
                 </h2>
-
-                {parent === null ? draggableMarkup : null}
+                <div className="flex justify-between">
+                  {parent === null ? draggableMarkupA : null}
+                  {parentB === null ? draggableMarkupB : null}
+                  {parentC === null ? draggableMarkupC : null}
+                </div>
               </div>
             </div>
 
@@ -116,7 +125,12 @@ export default function Page() {
                 // We updated the Droppable component so it would accept an `id`
                 // prop and pass it to `useDroppable`
                 <Droppable key={id} id={id} dragging={isDragging}>
-                  {parent === id ? draggableMarkup : id}
+                  {parent === id ? draggableMarkupA : null}
+                  {parentB === id ? draggableMarkupB : null}
+                  {parentC === id ? draggableMarkupC : null}
+                  {parent === id || parentB === id || parentC === id
+                    ? null
+                    : "drop here!"}
                 </Droppable>
               ))}
             </div>
@@ -127,26 +141,31 @@ export default function Page() {
       </article>
     </main>
   );
+
   function handleDragEnd(event: DragOverEvent) {
-    const { over } = event;
+    const { over, active } = event;
 
     // If the item is dropped over a container, set it as the parent
     // otherwise reset the parent to `null`
-    setParent(over ? over.id : null);
+    setParent(over && active.id == "tA" ? over.id : null);
+    setParentB(over && active.id == "tB" ? over.id : null);
+    setParentC(over && active.id == "tC" ? over.id : null);
+
     if (over && over.id === "A") {
       setHighlight(colors[0]);
     } else {
       setHighlight(colors[1]);
     }
   }
+
   interface DraggableProps {
     label?: string;
+    id_outer: UniqueIdentifier;
   }
-  function DraggableItem({ label }: DraggableProps) {
+  function DraggableItem({ label, id_outer }: DraggableProps) {
     const { isDragging, setNodeRef, listeners } = useDraggable({
-      id: "draggable-item",
+      id: id_outer,
     });
-
     return (
       <Draggable
         dragging={isDragging}

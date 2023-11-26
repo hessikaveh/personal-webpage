@@ -28,7 +28,6 @@ export function Droppable({ children, id, dragging }: Props) {
       aria-label="Droppable region"
     >
       {children}
-      {droppable}
     </div>
   );
 }

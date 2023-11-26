@@ -76,6 +76,7 @@ export const Draggable = forwardRef<HTMLButtonElement, Props>(
             : axis === Axis.Horizontal
             ? draggableHorizontal
             : draggable}
+          <span className="text-slate-100">{label}</span>
           {handle ? <Handle {...(handle ? listeners : {})} /> : null}
         </button>
         {label ? <label>{label}</label> : null}

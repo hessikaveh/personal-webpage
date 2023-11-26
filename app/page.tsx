@@ -27,7 +27,7 @@ export default function Home() {
           technologies in their daily processes.{" "}
         </p>
         <p>
-          I communicate in English, German and Farsi and am available on the
+          I communicate in English and German. You can reach out to me on the
           following platforms.{" "}
         </p>
       </article>

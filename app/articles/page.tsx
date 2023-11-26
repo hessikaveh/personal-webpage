@@ -11,7 +11,6 @@ import {
 
 import { Droppable, Draggable, DraggableOverlay } from "../components";
 import dynamic from "next/dynamic";
-import { HighlightSpanKind } from "typescript";
 
 const DraggableOverlaytWithNoSSR = dynamic(
   () => Promise.resolve(DraggableOverlay),
@@ -35,6 +34,9 @@ export default function Page() {
           Here are some insights into topics about the async programming in
           python
         </p>
+        <div className="mockup-code bg-slate-400">
+          <code>import</code>
+        </div>
       </article>
       <DndContext
         onDragStart={() => {

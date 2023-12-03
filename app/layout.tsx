@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="navbar bg-base-200 fixed">
+        <div className="navbar bg-base-200 ">
           <div className="navbar-start">
             <Link className="btn btn-ghost btn-circle" href="/">
               <Image

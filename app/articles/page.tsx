@@ -35,13 +35,16 @@ export default function Page() {
   const [parentB, setParentB] = useState<UniqueIdentifier | null>(null);
   const [parentC, setParentC] = useState<UniqueIdentifier | null>(null);
   const [highlight, setHighlight] = useState<string>(colors[1]);
-  const draggableMarkupA = <DraggableItem label="Task A" id_outer={"tA"} />;
-  const draggableMarkupB = <DraggableItem label="Task B" id_outer={"tB"} />;
-  const draggableMarkupC = <DraggableItem label="Task C" id_outer={"tC"} />;
+  const draggableMarkupA = <DraggableItem label="async" id_outer={"tA"} />;
+  const draggableMarkupB = <DraggableItem label="await" id_outer={"tB"} />;
+  const draggableMarkupC = <DraggableItem label="run" id_outer={"tC"} />;
 
   useEffect(() => {
     hljs.highlightAll();
   });
+  useEffect(() => {
+    setBoxHighlight();
+  }, [parent, parentB]);
 
   const code_first = `import asyncio
 
@@ -101,38 +104,44 @@ export default function Page() {
           onDragStart={() => setIsDragging(true)}
           onDragEnd={handleDragEnd}
         >
-          <div className="flex flex-col w-full m-1">
+          <div className="flex flex-col ">
             <div
-              className="grid flex-grow card bg-base-300 rounded-box place-items-center"
+              className=" card bg-base-300 rounded-box"
               style={{ backgroundColor: highlight }}
             >
-              <div className="card-body">
-                <h2 className="card-title">
-                  {" "}
-                  Here are the items you can drag:
-                </h2>
-                <div className="flex justify-between">
-                  {parent === null ? draggableMarkupA : null}
-                  {parentB === null ? draggableMarkupB : null}
-                  {parentC === null ? draggableMarkupC : null}
-                </div>
+              <p className="mx-2 font-bold">
+                Drag the keywords to the right places to complete the code
+                example:
+              </p>
+              <div className="flex justify-around m-3">
+                {parent === null ? draggableMarkupA : null}
+                {parentB === null ? draggableMarkupB : null}
+                {parentC === null ? draggableMarkupC : null}
               </div>
             </div>
 
             <div className="divider divider-vertical "></div>
-            <div className="grid  flex-grow card bg-base-300 rounded-box place-items-center">
-              {containers.map((id) => (
-                // We updated the Droppable component so it would accept an `id`
-                // prop and pass it to `useDroppable`
-                <Droppable key={id} id={id} dragging={isDragging}>
-                  {parent === id ? draggableMarkupA : null}
-                  {parentB === id ? draggableMarkupB : null}
-                  {parentC === id ? draggableMarkupC : null}
-                  {parent === id || parentB === id || parentC === id
-                    ? null
-                    : "drop here!"}
-                </Droppable>
-              ))}
+            <div className="grid grid-cols-8 gap-0 content-stretch card bg-base-300 rounded-box ">
+              <div>{droppableSet(containers[0], isDragging)}</div>
+              <div className="flex justify-center items-center">def main()</div>
+              <div className="flex justify-center items-center">main():</div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div className="flex justify-center items-center"></div>
+              <div className="flex justify-center items-center"> L = </div>
+              <div>{droppableSet(containers[1], isDragging)}</div>
+              <div className="flex justify-center items-center">
+                {"asyncio"}
+              </div>
+              <div className="flex justify-center items-center">
+                {".gather"}
+              </div>
+              <div className="flex justify-center items-center">{"(...)"}</div>
+              <div></div>
+              <div></div>
             </div>
           </div>
 
@@ -142,20 +151,54 @@ export default function Page() {
     </main>
   );
 
+  function droppableSet(id: string, dragging: boolean) {
+    return (
+      <Droppable key={id} id={id} dragging={dragging}>
+        {parent === id ? draggableMarkupA : null}
+        {parentB === id ? draggableMarkupB : null}
+        {parentC === id ? draggableMarkupC : null}
+        {parent === id || parentB === id || parentC === id ? null : (
+          <span className="text-sm">drop here!</span>
+        )}
+      </Droppable>
+    );
+  }
+
   function handleDragEnd(event: DragOverEvent) {
     const { over, active } = event;
 
     // If the item is dropped over a container, set it as the parent
     // otherwise reset the parent to `null`
-    setParent(over && active.id == "tA" ? over.id : null);
-    setParentB(over && active.id == "tB" ? over.id : null);
-    setParentC(over && active.id == "tC" ? over.id : null);
+    console.log(active.id, over?.id);
+    switch (active.id) {
+      case "tA":
+        setParent(over && active.id === "tA" ? over.id : null);
+        console.log(parent);
+        break;
+      case "tB":
+        setParentB(over && active.id === "tB" ? over.id : null);
+        break;
+      case "tC":
+        setParentC(over && active.id === "tC" ? over.id : null);
+        break;
+      default:
+        console.log("No such item exists!");
+        break;
+    }
+  }
 
-    if (over && over.id === "A") {
+  function setBoxHighlight() {
+    console.log(parent, parentB);
+    if (parent === "A" && parentB === "B") {
       setHighlight(colors[0]);
     } else {
       setHighlight(colors[1]);
     }
+    /*if (over && over.id === "A" && active.id == "tA") {
+      setHighlight(colors[0]);
+    } else {
+      setHighlight(colors[1]);
+    } */
   }
 
   interface DraggableProps {

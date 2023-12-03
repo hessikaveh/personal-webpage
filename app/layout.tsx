@@ -40,9 +40,9 @@ export default function RootLayout({
               <li>
                 <Link href="/projects/">Projects</Link>
               </li>
-              {/*               <li>
+              <li>
                 <Link href="/articles/">Articles</Link>
-              </li> */}
+              </li>
             </ul>
           </div>
           <div className="navbar-end">

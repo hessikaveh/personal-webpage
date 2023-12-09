@@ -44,7 +44,7 @@ export default function Page() {
   });
   useEffect(() => {
     setBoxHighlight();
-  }, [parent, parentB]);
+  }, [parent, parentB, setBoxHighlight]);
 
   const code_first = `  import asyncio
 
@@ -121,27 +121,22 @@ export default function Page() {
             </div>
 
             <div className="divider divider-vertical "></div>
-            <div className="grid grid-cols-8 gap-0 content-stretch card bg-base-300 rounded-box ">
-              <div>{droppableSet(containers[0], isDragging)}</div>
-              <div className="flex justify-center items-center">def main()</div>
-              <div className="flex justify-center items-center">main():</div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div className="flex justify-center items-center"></div>
-              <div className="flex justify-center items-center"> L = </div>
-              <div>{droppableSet(containers[1], isDragging)}</div>
-              <div className="flex justify-center items-center">
-                {"asyncio"}
+            <div className="grid grid-cols-1 gap-0 content-stretch card bg-base-300 rounded-box ">
+              <div className="flex">
+                <div>{droppableSet(containers[0], isDragging)}</div>
+                <div className="flex justify-center items-center">
+                  def main():
+                </div>
               </div>
-              <div className="flex justify-center items-center">
-                {".gather"}
+              <div className="flex">
+                <div className="flex indent-24 justify-center items-center">
+                  L =
+                </div>
+                <div>{droppableSet(containers[1], isDragging)}</div>
+                <div className="flex justify-center items-center">
+                  {"asyncio.gather(...)"}
+                </div>
               </div>
-              <div className="flex justify-center items-center">{"(...)"}</div>
-              <div></div>
-              <div></div>
             </div>
           </div>
 

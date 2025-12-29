@@ -40,9 +40,6 @@ export default function RootLayout({
               <li>
                 <Link href="/projects/">Projects</Link>
               </li>
-              <li>
-                <Link href="/articles/">Articles</Link>
-              </li>
             </ul>
           </div>
           <div className="navbar-end">

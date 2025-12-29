@@ -41,7 +41,7 @@ export default function RootLayout({
                 <Link href="/projects/">Projects</Link>
               </li>
               <li>
-                <Link href="/articles/">Articles</Link>
+                <Link href="/talks/">Talks</Link>
               </li>
             </ul>
           </div>

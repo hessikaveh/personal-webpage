@@ -20,16 +20,22 @@ export default function Home() {
         <h1>Sam Kaveh, PhD</h1>
         <h2>About Me</h2>
         <p>
-          {" "}
-          During my career I have put on many hats, from founding a startup and
-          software development to consulting companies in migrating their
-          infrastructure to cloud and incorporating machine learning
-          technologies in their daily processes.{" "}
+          My professional journey is defined by a passion for bridging the gap between
+          theoretical innovation and practical implementation. With a <strong>Ph.D. in
+            Particle Physics</strong> from CERN, I bring a rigorous analytical lens to software
+          engineering, specializing in the intersection of AI, data science, and high-performance
+          computing.
         </p>
         <p>
-          I communicate in English and German. You can reach out to me on the
-          following platforms.{" "}
+          Throughout my career, I have embraced diverse challenges&mdash;from founding startups
+          and leading cloud migrations to architecting agentic AI systems. Whether it&apos;s
+          optimizing global supply chains or measuring the subatomic world, I thrive in
+          high-stakes environments where precision and collaboration are paramount.
         </p>
+        <p className="font-medium">
+          I am fluent in English and German. Let&apos;s connect:
+        </p>
+
       </article>
       <div>
         <ul className="menu menu-horizontal bg-base-200 rounded-box my-3">

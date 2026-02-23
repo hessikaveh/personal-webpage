@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[22016,["/personal-webpage/_next/static/chunks/a6e4692d5751d0e3.js"],""]
+3:I[97367,["/personal-webpage/_next/static/chunks/ff1a16fafef87110.js","/personal-webpage/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"V_3QkHNDjlYT_AeNxQrjQ","rsc":["$","$1","c",{"children":[["$","main",null,{"className":"flex min-h-screen flex-col items-center justify-between p-24","children":["$","article",null,{"className":"prose lg:prose-xl prose-img:mx-auto","children":[["$","p",null,{"children":"Some of my thoughts and personal opinions:"}],["$","ul",null,{"children":[["$","li","halting_problem",{"children":["$","$L2",null,{"href":"/blog/halting_problem","children":"Agentic AI and the Place for Human Ingenuity"}]}]]}]]}]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

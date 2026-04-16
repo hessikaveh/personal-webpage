@@ -2,7 +2,7 @@
 title: "Agentic AI and the Place for Human Ingenuity"
 date: "2026-02-22"
 ---
-Recently I came across a note on the place of human creativity and ingenuity in mathematics that was written before the LLMs and agentic AI's popularity. Namely I was looking up a concept on the Princeton Companion to Mathemtics (published in 2008) where I came across the follwoing:
+Recently I came across a note on the place of human creativity and ingenuity in mathematics that was written before the LLMs and agentic AI's popularity. Namely I was looking up a concept on the Princeton Companion to Mathematics (published in 2008) where I came across the follwoing:
 >Different people draw different morals from these results. In the opinion of some mathematicians, they show that there will always be a place for human creativity in mathematics, however powerful the computers of the future might be.
 
 And I thought wow, this is extremely relevant and contemporary as we are contemplating our own roles and place in the world as white collar workers. But before I can explain why I think this has anything to do with the LLMs and agentic AI, I need to explain the context for the above mentioned sentence.

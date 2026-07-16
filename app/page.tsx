@@ -52,7 +52,7 @@ export default function Home() {
             </Link>
           </li>
           <li>
-            <Link className="" href="https://github.com/hessikaveh">
+            <Link className="" href="https://github.com/samkaveh">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6"

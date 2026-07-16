@@ -24,13 +24,13 @@ export default function Page() {
               </p>
               <div className="flex flex-wrap gap-3 mt-6 not-prose">
                 <a
-                  href="https://github.com/hessikaveh/sylt-2d"
+                  href="https://github.com/samkaveh/sylt-2d"
                   className="flex items-center gap-2 px-4 py-2 bg-slate-800 text-white text-sm font-medium rounded-lg hover:bg-slate-900 transition"
                 >
                   💻 Source Code
                 </a>
                 <a
-                  href="https://hessikaveh.github.io/sylt-wasm-example/"
+                  href="https://samkaveh.github.io/sylt-wasm-example/"
                   className="flex items-center gap-2 px-4 py-2 bg-orange-600 text-white text-sm font-medium rounded-lg hover:bg-orange-700 transition"
                 >
                   🕹️ WASM Demo

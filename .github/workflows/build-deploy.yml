@@ -10,18 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
-        with:
-          # update the Node version to meet your needs
-          node-version: 20
-          cache: npm
+      - uses: oven-sh/setup-bun@v2
 
       - name: Build
         run: |
-          npm ci
-          npm run build
+          bun install --frozen-lockfile
+          bun run build
           touch out/.nojekyll
 
       - name: Deploy

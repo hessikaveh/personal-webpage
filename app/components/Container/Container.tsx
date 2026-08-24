@@ -12,7 +12,7 @@ export interface Props {
   style?: React.CSSProperties;
   horizontal?: boolean;
   hover?: boolean;
-  handleProps?: React.HTMLAttributes<any>;
+  handleProps?: React.HTMLAttributes<HTMLElement>;
   scrollable?: boolean;
   shadow?: boolean;
   placeholder?: boolean;
